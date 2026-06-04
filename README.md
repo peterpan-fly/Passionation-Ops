@@ -32,12 +32,7 @@ See [docs/laravel-cloud.md](docs/laravel-cloud.md).
 Recommended deploy command:
 
 ```bash
-php artisan migrate --force
-php artisan db:seed --force
-php artisan optimize:clear
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+php artisan ops:bootstrap
 ```
 
 Set these environment variables in Laravel Cloud:
@@ -50,8 +45,8 @@ APP_URL=https://your-generated-domain.laravel.cloud
 DB_CONNECTION=pgsql
 SESSION_DRIVER=database
 SESSION_SECURE_COOKIE=true
-CACHE_STORE=database
-QUEUE_CONNECTION=database
+CACHE_STORE=file
+QUEUE_CONNECTION=sync
 ADMIN_NAME="Passionation Admin"
 ADMIN_EMAIL=admin@passionation.test
 ADMIN_PASSWORD=change-this-before-sharing

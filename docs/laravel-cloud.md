@@ -19,12 +19,7 @@ npm run build
 - Deploy command:
 
 ```bash
-php artisan migrate --force
-php artisan db:seed --force
-php artisan optimize:clear
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+php artisan ops:bootstrap
 ```
 
 Laravel Cloud automatically injects database credentials when a database is attached to the environment. Set `DB_CONNECTION` to `pgsql` for Postgres or `mysql` for MySQL.
@@ -39,8 +34,8 @@ APP_URL=https://your-generated-domain.laravel.cloud
 DB_CONNECTION=pgsql
 SESSION_DRIVER=database
 SESSION_SECURE_COOKIE=true
-CACHE_STORE=database
-QUEUE_CONNECTION=database
+CACHE_STORE=file
+QUEUE_CONNECTION=sync
 ADMIN_NAME="Passionation Admin"
 ADMIN_EMAIL=admin@passionation.test
 ADMIN_PASSWORD=change-this-before-public-sharing
